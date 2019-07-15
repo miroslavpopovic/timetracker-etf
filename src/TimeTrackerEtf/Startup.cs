@@ -44,6 +44,8 @@ namespace TimeTrackerEtf
                 app.UseHsts();
             }
 
+            app.UseMiddleware<ErrorHandlingMiddleware>();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
