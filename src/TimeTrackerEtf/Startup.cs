@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TimeTrackerEtf.Data;
+using TimeTrackerEtf.Extensions;
 using TimeTrackerEtf.Models.Validation;
 
 namespace TimeTrackerEtf
@@ -24,6 +25,8 @@ namespace TimeTrackerEtf
         {
             services.AddDbContext<TimeTrackerDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddJwtBearerAuthentication(Configuration);
 
             services.AddControllers()
                 .AddFluentValidation(
@@ -50,6 +53,7 @@ namespace TimeTrackerEtf
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

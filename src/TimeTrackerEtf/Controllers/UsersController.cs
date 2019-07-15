@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -9,6 +10,7 @@ using TimeTrackerEtf.Models;
 namespace TimeTrackerEtf.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("/api/users")]
     public class UsersController : Controller
     {
@@ -59,6 +61,7 @@ namespace TimeTrackerEtf.Controllers
             };
         }
 
+        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(long id)
         {
@@ -79,6 +82,7 @@ namespace TimeTrackerEtf.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<ActionResult<UserModel>> Create(
             UserInputModel model)
@@ -99,6 +103,7 @@ namespace TimeTrackerEtf.Controllers
                 new {id = user.Id}, resultModel);
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult<UserModel>> Update(
             long id, UserInputModel model)
