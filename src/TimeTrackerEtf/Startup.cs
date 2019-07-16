@@ -28,6 +28,8 @@ namespace TimeTrackerEtf
 
             services.AddJwtBearerAuthentication(Configuration);
 
+            services.AddOpenApi();
+
             services.AddControllers()
                 .AddFluentValidation(
                     options => options
@@ -55,6 +57,9 @@ namespace TimeTrackerEtf
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseEndpoints(endpoints =>
             {

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using NSwag.Annotations;
 
 namespace TimeTrackerEtf.Controllers
 {
     // WARNING: For demo only
+    [OpenApiIgnore]
     public class DummyAuthController : Controller
     {
         private readonly IConfiguration _configuration;
