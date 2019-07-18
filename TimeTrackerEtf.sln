@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29021.104
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTrackerEtf", "src\TimeTrackerEtf\TimeTrackerEtf.csproj", "{FCE8C254-88A2-4726-9DBD-3E5A58C244AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTrackerEtf.Tests", "src\TimeTrackerEtf.Tests\TimeTrackerEtf.Tests.csproj", "{0CF294F9-1F8D-4EE7-AB7E-A4C624372F6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTrackerEtf.Tests", "src\TimeTrackerEtf.Tests\TimeTrackerEtf.Tests.csproj", "{0CF294F9-1F8D-4EE7-AB7E-A4C624372F6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTrackerEtf.Client", "TimeTrackerEtf.Client\TimeTrackerEtf.Client.csproj", "{5004F1C5-56E9-4435-91B4-5E8B81EDFBCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0CF294F9-1F8D-4EE7-AB7E-A4C624372F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CF294F9-1F8D-4EE7-AB7E-A4C624372F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CF294F9-1F8D-4EE7-AB7E-A4C624372F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5004F1C5-56E9-4435-91B4-5E8B81EDFBCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5004F1C5-56E9-4435-91B4-5E8B81EDFBCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5004F1C5-56E9-4435-91B4-5E8B81EDFBCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5004F1C5-56E9-4435-91B4-5E8B81EDFBCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
