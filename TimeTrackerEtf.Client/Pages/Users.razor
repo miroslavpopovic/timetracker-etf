@@ -50,9 +50,24 @@ else
         </tbody>
     </table>
 
-    <!-- PAGER -->
+    <Pager Model="@users" Loader="@LoadUsers" />
 }
 
 @code {
 private PagedList<UserModel> users;
+
+protected override async Task OnInitAsync()
+{
+    await LoadUsers();
+}
+
+private async Task LoadUsers(int page = 1)
+{
+    const int pageSize = 2;
+    var url = $"users?page={page}&size={pageSize}";
+
+    users = await ApiService.GetAsync<PagedList<UserModel>>(url);
+
+    base.StateHasChanged();
+}
 }
