@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using TimeTrackerEtf.Client.Security;
+using TimeTrackerEtf.Client.Services;
 
 namespace TimeTrackerEtf.Client
 {
@@ -10,6 +11,7 @@ namespace TimeTrackerEtf.Client
         {
             services.AddAuthorizationCore();
             services.AddTokenAuthenticationStateProvider();
+            services.AddTransient<ApiService>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
